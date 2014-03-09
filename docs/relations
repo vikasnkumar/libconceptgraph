@@ -1,0 +1,78 @@
+Format: NameOfRelation(formal parameters). the order of the parameters defines
+the going into and out of arrows in a relation.
+Descriptions of each relation define the concept type of the last arc that
+belongs to the relation.
+
+- Agent;Agnt(Act, Animate): An active animate entitiy that voluntarily initiates an act.
+- Attribute;Attr(Object, Entity): An entity that is a property of some object.
+[Rhino: Otto] -> (Attr) -> [Orange]
+- Beneficiary;Benf(Act, Animate): A beneficiary is a recipient of some act. The
+ beneficiary also derives a benefit from the successful completion of the act.
+- Characteristic;Chrc(Entity, Entity): A type whose instances are properties of
+  entities.
+[Rhino: Otto] -> (Chrc) -> [Color: Orange]
+The arc pointing away from Chrc must point to a concept which has a type whose
+instances are properties. eg. Color is a type but not a property. Color's
+instances are properties, such as Orange or Red.
+
+The arc pointing away from Attr must point to a concept whose type is a
+property, eg Red. Thus Attr would not point to a concept of type Color but to
+concepts with types such as Red, Good, Wise etc.
+
+- Completion;Cmpl(TemporalProcess, Physical): A goal of a completed process
+  whose major tenet is that it takes place over time. This can be a state or a
+situation.
+
+- Destination;Dest(SpatialProcess, Physical): A goal of a process whose major
+  tenet is that it is spatial.
+[Go] -> (Dest) -> [Bar]
+- Duration;Dur(State, Interval): The interval in which a state exists.
+[Wait] -> (Dur) -> [Interval: @10 min] /* Wait for 10 minutes */
+- Effector;Efct(Entity, Entity): An active entity (animate or inanimate) that
+  initiates an action, but without voluntary intention.
+[Tree] <- (Efct) <- [Produce] -> (Rslt) -> [Fruit]
+- Experiencer;Expr(State, Animate): An animate entity who experiences a state.
+  The state is often a verb of perception, such as "see", "hear", "think", etc.
+- Role; Has(Entity, Entity): The Has relation is a primitive relation (not
+  defined). It is used to define all of the relations, and can be used by
+itself.
+[Person: @every] -> (Has) -> [Part: @2 legs]
+- Instrument;Inst(Act, Entity): An instrument used in an act. The instrument is
+  not changed by the activity.
+- Location;Loc(Physical, Physical): The place where something is or takes
+  place.
+- Manner;Manr(Process, Entity): An entity that is a property of some process. In
+  English, we often use adverbs to describe manners, e.g. quickly, slowly, etc.
+- Measure;Meas(Attribute, Quantity): A quantity used to describe an attribute.
+  In English, the attribute will often be an adjective such as "clever", "fat",
+etc. The quantity will either be a measure or a degree or the like.
+[Clever] -> (Meas) -> [Degree: #very]
+[Part: #dick] -> (Meas) -> [Measure: @6 inch]
+- Origin;Orgn(Process, Physical): A physical participant in a process which is
+  the source or originator of the process.
+- Part;Part(Object, Object): An object which is a component/part of some other
+  object. [Body] -> (Part) -> [Leg]
+There is a very important distinction between an attribute and a part: Unlike an
+attribute, a part is capable of existing independently. For eg, a wheel is
+capable of existing independently of the car of which it is a part of. However,
+if the car is white, that is an attribute of the car, which cannot exist
+independently of the car.
+- Path;Path(Process, Place): A path describing a process.
+[Travel] -> (Path) -> [Country: USA]
+- Possession;Poss(Animate, Entity): An entity owned by some animate being.
+- PointInTime;PTim(Physical, Time): An essential participant of a temporal
+  togetherness (nexus).
+[Time: 5:15pm] <- (PTim) <- [Situation: [Person] <- (Agnt) <- [Leave]]
+- Patient;Ptnt(Process, Physical): A participant in a process that undergoes a
+  change during the course of the process.
+- Recipient;Rcpt(Act, Animate): An animate goal of an act.
+- Result;Rslt(Process, Entity): An inanimate goal of an act.
+- Theme;Thme(Situation, Entity): A participant that may be moved, said, or
+  experienced, but is not structurally changed.
+[Person: Alfred] <- (Agnt) <- [Drive] -> (Thme) -> [Car: #Fiat]
+
+
+
+
+
+

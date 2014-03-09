@@ -1,0 +1,272 @@
+CGIF format keywords
+- Proposition:
+- Either:
+- Or:
+- If:
+- Then:
+- Iff:
+- Equiv:
+- Equivalence:
+- @every
+
+ONTOLOGY DEFINITIONS:
+- Entity (Thing)
+- Absurdity
+- Non-Entity ? (Nothing)
+- InstanceOf
+- HasPart
+- MemberOf
+- Has
+- LT
+- GT
+- EQ
+- SubClassOf/SubTypeOf (maybe same as InstanceOf)
+- SuperClassOf/SuperTypeOf (maybe same as MemberOf)
+- ComplementOf (Direct Opposite Of) More for class types
+- DisjointUnionOf
+- UnionOf
+- Amount/Quantity
+- WordNet(WN)
+- WN-LexName
+- RelatedConcepts
+- WN-Hypernym
+- WN-Meronym
+- WN-Holonym
+- WN-Family
+- WN-Sense
+- WN-POS
+- WN-SenseCount
+- WN-Class
+- WN-Antonym
+- WN-Word
+- WN-Collocation
+- ConceptIndex (index of concept in database)
+- RelationIndex
+- Abbreviation
+- Concept
+- Relation
+- Module
+- Imports
+- Encoding
+- Excludes
+- Situation
+- SimilarTo
+- Disjunction
+- PropertyOf
+- Collection
+- (X)HTML-* concepts for spidering properties
+The following might clash with WordNet, but we can find a common ground here.
+- Completion/Cmpl
+- Duration/Dur
+- Effector/Efct
+- Experiencer/Expr
+- Role/Has
+- Instrument/Inst
+- Location/Loc
+- Manner/Manr
+- Measure/Meas
+- Origin/Orgn
+- Part
+- Path
+- Possession
+- PointInTime/PTim
+- Patient/Ptnt
+- Recipient/Rcpt
+- Result/Rslt
+- Theme/Thme
+- Agent/Agnt
+- Attribute/Attr
+- Beneficiary/Benf
+- Characteristic/Chrc
+These are categories from Top Level Ontology as per Sowa's KR Book
+- Entity
+- 
+  - Independent: [Entity] an entity characterized by some inherent firstness,
+    independent of any relationships it may have to other entities
+  - Relative: [Entity] An entity in a relationship to some other entity.
+    Relative is a primitive for which the HAS test must apply. For any relative
+X, there must exist some Y such that X has Y or Y has X.
+  - Mediating: [Entity] An entity characterized by some thirdness that brings
+    other entities into a relationship. An independent entity need not have a
+relationship to anything else, a relative entity must have some relationship to
+something else, and a mediating entity creates a relationship between two other
+entities.
+- 
+  - Physical: [Entity] An entity that has a location in space-time. Anything
+    physical is located in some place. Anything physical occurs at some point in
+time.
+  - Abstract: [Entity] Pure information as distinguished from any particular
+    encoding of the information in a physical medium. 
+- 
+  - Continuant: [Entity] An entity whose identity continues to be recognizable
+    over some extended interval of time. A continuant x has only spatial parts
+and no temporal parts. At any time t when x exists, all of x exists at the same
+time t. New parts of a continuant x may be acquired and old parts may be lost.
+Parts that have been lost may cease to exist, but everything that remains a part
+of x continues to exist at the same time as x. The identity conditions of a
+continuant are independent of time. A physical continuant is an object, and an
+abstract continuant is a schema used to characterize some object.
+  - Occurrent: [Entity] An entity that does not have a stable identity during any
+    interval of time. The temporal parts of an occurrent, called stages, exist
+at different times. The spatial parts of an occurrent, called participants, may
+exist at the same time, but an occurrent may have different participants at
+different stages. No identity conditions that can be used to identify two
+occurrents that are observed in nonoverlapping space-time regions. eg. person's
+lifetime is occurrent.
+- Actuality: [ Independent Physical] A physical entity whose existence is
+  independent of any other entity.
+- Form: [Independent Abstract] Abstract information independent of any encoding
+  or embodiment. Forms can exist in the same sense as math objects such as sets
+and relations, but instances of form cannot exist at a particular place and time
+without some physical encoding or embodiment.
+- Prehension: [Physical Relative] A physical entity relative to some entity or
+  entities. The HAS test is used to check whether an entity X prehends an entity
+Y. Prehension = HAS(X, Y).
+- Proposition: [Relative Abstract] An abstraction that relates some entity or
+  entities. 
+- Nexus: [Physical Mediating] A physical entity mediating two or more other
+  entities. An action that consists of what one participant/agent is doing to
+another participant/patient.
+- Intention: [Abstract Mediating] Abstraction considered as mediating other
+  entities. eg. hopes, fears, wishes, purposes
+- [Abstract Occurrent]
+- [Relative Continuant]
+- Object: [Independent Continuant Physical] Actuality considered as a continuant
+  which retains its identity over some interval of time.
+- Juncture: [Relative Continuant Physical] A prehension considered as a
+  continuant during some interval.
+- Structure: [Mediating Continuant Physical] A nexus considered as a continuant.
+  A structure mediates multiple objects whose junctures constitute the
+structure.
+- Process: [Independent Occurrent Physical] Actuality considered as an Occurrent
+  during the interval of interest. Depending on time scale and level of detail,
+the same actual entity may be viewed as a stable object or a dynamic process.
+- Participation: [Relative Occurrent Physical] A prehension considered as an
+  occurent during the interval of interest. The prehending entity is a process,
+and the prehended entity is a participant.
+- Situation: [Mediating Occurrent Physical] A nexus considered as an occurrent.
+  A situation mediates the participants of some process, whose stages may
+involve different participants at different times.
+- Schema:[Independent Continuant Abstract] A form that has the structure of a
+  continuant. A schema is an abstract form whose structure does not specify time
+or time-like relationships. eg. Encoding, syntax, geometry
+- Description: [Relative Continuant Abstract] A proposition about a continuant
+  that states how some schema characterizes some aspect or configuration of a
+continuant. 
+- Reason: [Mediating Continuant Abstract] Intention that has the form of a
+  continuant. Unlike a simple description (Secondness), a reason explains an
+entity in terms of an intention (Thirdness).
+- Script:[Independent Occurrent Abstract] A form that has the structure of an
+  occurrent. A script is an abstract form that represents time sequences. eg,
+recipe, program, sheet music
+- History: [Relative Occurrent Abstract] A proposition about an occurrent. A
+  history is a proposition that relates some script to the stages of some
+occurrent. 
+- Purpose: [Mediating Occurrent Abstract] Intention that has the form of an
+  occurrent. Time sequence, contingency, success/failure. Agents.
+- Absurdity: [Independent Relative Mediating Continuant Abstract Occurrent Physical]
+
+Everything is an instance of Entity.
+Every type is a subtype of Entity
+Anything that exists is of type Entity.
+Nothing is an instance of Absurdity.
+Every type is a supertype of Absurdity.
+
+- ContinuousProcess
+ - Initiation
+ - Continuation
+ - Cessation
+- DiscreteProcess
+ - Event
+ - State
+
+- Agent : Animate entity, Capable entity, Doing causality/action, Purpose intention
+
+- Actuality:
+  - Phenomenon
+  - Role
+    - PrehendingEntity
+      - Composite
+        - Whole
+        - Substrate
+      - Correlative
+    - PrehendedEntity
+      - Correlative
+      - Component
+        - Part
+          - Piece
+          - Participant
+          - Stage
+        - Property
+          - Attribute
+          - Manner
+  - Sign
+
+Relations:
+Accompaniment: Accm(Object, Object) , subTypeOf [Object Participant], An object
+that participates with another object in some process
+Amount: Amt(Characteristic, Quantity), subTypeOf [Quantity Property]
+A quantity used as a measure of some characteristic.
+Argument: Arg(Function, Data), [Data Role]
+Data in the role of input to a function
+Attribute: Attr(Object, Entity), [Entity Property]
+An entity that is a property of some object
+Base: Base(Attribute, Type), [Type]
+A type of role that determines how an attribute is related to its object
+Because: Bcas(Situation, Situation), [Situation Correlative], A situation in the
+role of causing another situation.
+Child: Chld(HumanBeing, HumanBeing), [HumanBeing Correlative], A human being
+that is a child of some human being.
+Comparand: Comp(Attribute, Object), [Object Correlative], An object that serves
+as a standard of comparison for some attribute.
+Characteristic: Chrc(Entity, Entity), [Type Property], A type whose instances
+are properties of entitites. eg. shape, color, length, weight
+Role: Has(Entity, Entity), [], Has is a general relation type used to define all
+roles.
+Manner: Manr(Process, Entity), [Entity Property], An entity that is a property
+of some process.
+Measure: Meas(Attribute, Quantity), [Quantity Property], A quantity used as a
+measure of some attribute.
+Part: Part(Object, Object), [Object Component], An object that is a component of
+some object. A part can exist independently.
+Possession: Poss(Animate, Entity), [Entity Correlative], An entity owned by some
+animate being.
+Successor: Succ(Occurrent, Occurrent), [Occurrent Correlative], An occurrent
+that occurs after some other occurrent.
+
+
+- Participant
+  - Determinant : determines the direction of the process, either from the
+    beginning as the initiaor or from the end as a goa l
+  - Immanent : is present throughout the process, but does not actively control
+    what happens
+  - Source : must be present at the beginning of the process, but need not
+    participate throughout the process
+  - Product : must be present at the end of the process but need not participate
+    throughout the process.
+  - Initiator : [Determinant Source] whereby a change or state is initiated
+  - Resource: [Source Immanent] the matter or the substrate
+  - Goal: [Determinant Product] the purpose or the benefit
+  - Essence: [Product Immanent] what it is
+
+
+- Agent : Agnt( Act, Animate), [Initiator]
+- Beneficiary : Benf (Act, Animate), [ Recipient]
+- Completion : Cmpl(TemporalProcess, Physical), [Goal]
+- Destination : Dest(SpatialProcess, Physical), [Goal]
+- Duration: Dur(State, Interval), [Resource]
+- Effector: Efct(Entity, Entity), [Initiator]
+- Experiencer: Expr(State, Animate), [Goal]
+- Instrument: Inst(Act, Entity), [Resource]
+- Location: Loc(Physical, Physical), [Essence]
+- Matter: Matr(Act, Substance), [Resource]
+- Medium: Med(Tranfer, Physical), [Resource]
+- Origin: Orgn(Process, Physical), [Initiator]
+- Path: Path(Process, Place), [Resource]
+- Patient: Ptnt(Process, Physical), [Essence]
+- PointInTime: PTim(Physical, Time), [Essence]
+- Recipient: Rcpt(Act, Animate), [Goal]
+- Result: Rslt(Process, Entity), [Goal]
+- Start: Strt(Entity, Time), [Initiator]
+- Theme: Thme(Situation, Entity), [Essence]
+

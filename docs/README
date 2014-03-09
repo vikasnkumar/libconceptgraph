@@ -1,0 +1,50 @@
+Algorithm for libconceptgraph runtime interpreter/preprocessor
+==============================================================================
+The aim is for conceptual graphs to be parsed and converted into an efficient
+data structure in memory to be used by other programs that are dependent on this
+structure. The API provided will be able to extract information from these
+graphs in a possible top-down approach. Each graph that is created in memory
+will have to be linked to other graphs via a new method of linking graphs to
+form larger graphs. This will help build an ontology of sorts. 
+
+To avoid repetition of strings and usage of large memory, every unique string
+will be placed in a symbol table of sorts and pointers will be used to keep
+track of the graphs. Multiple graphs could have the same vertex, and hence this
+will lead to slightly efficient memory usage at the cost of speed.
+
+Each concept in a CG can be defined as a separate CG in itself, and thus each
+concept acts like a macro.
+
+1. Symbol table is needed to store each lexeme. Every concept name, relation
+name, sequence name is a lexeme. It can have more properties but a list of
+lexemes have to be stored in a table, and should have a method to find the
+lexeme if needed. Eg. if a concept exists [ConceptA: ConceptB] then both
+ConceptA and ConceptB have to be in the symbol table. The relationship of these
+with each other need not be present in the symbol table, however. The validity
+of the expression has to be checked by the grammar.
+
+2. Reserved words also have to be present in the symbol table. On lookup they
+return tokens corresponding to the reserved word. This way they cannot be used
+by the text system.
+
+3. Each lexeme will have a token associated with it. This token will match the
+token in the grammar/lexical scanner files. For example, 123 will have a token
+NUMERAL, "conceptA" will have a token IDENTIFIER, and "Proposition" will have
+the token PROPOSITION.
+
+
+Store the value in yylval somehow for Bison to immediately use it. Otherwise
+store in a symbol table and return the index for bison to get the value from
+the symbol table directly.
+yy_push_state, yy_pop_state
+
+
+----
+How to use this:
+1. Parse text using link-grammar and use the suggestions to decide noun or verb
+or adjective or adverb or anything else.
+2. get the meaning of the word from wordnet if possible.
+3. if available take the constructed graphs from wordnet
+4. convert the graphs to CGs.
+
+

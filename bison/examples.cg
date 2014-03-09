@@ -1,0 +1,72 @@
+/* Extended CGIF statements */
+[/* John goes to Boston by bus. */]
+[Go: *x] [Person: John] [City: Boston] [Bus: *y]
+(Agnt ?x John) (Dest ?x Boston) (Inst ?x ?y)
+
+[/* If a cat is on a mat, then it is a happy pet. */]
+[If: [Cat: *x] [Mat: *y] (On ?x ?y)
+	[Then: [Pet: ?x] [Happy: *z] (Attr ?x ?z) ]]
+
+[/* For every cat and every mat, if the cat is on the mat, then it is a happy
+pet */]
+[Cat: @every *x] [Mat: @every *y]
+[If: (On ?x ?y) [Then: [Pet: ?x] [Happy: *z] (Attr ?x ?z)]]
+
+[/* y = (x + 7)/sqrt(7) */]
+[Number: *x] [Number: *y] [Number: 7]
+(Add ?x 7 | [*u]) (Sqrt 7 | [*v]) (Divide ?u ?v | ?y ; end comment)
+
+[/* Bob and Sue are related */]
+[Relation: *r] (Familial ?r) (#?r Bob Sue)
+
+["This string may or may not occur."]
+[/* coreference concept in CGIF */ : ?x Cicero Tully ?abcd]
+
+(IntegerDivide [Integer: *x] [Integer: 7] | *u *v)
+
+/* This sentence asserts that there exist functions Quotient and Remainder that
+ * determine the values of the third and fourth arguments of the relation
+ * IntegerDivide.
+ */
+[*Quotient] [*Remainder]
+[[@every *x1] [@every *x2] [@every *x3] [@every *4]
+[Equiv: [Iff: (IntegerDivide ?x1 ?x2 | ?x3 ?x4)]
+	[Iff: (#?Quotient ?x1 ?x2 | ?x3) (#?Remainder ?x1 ?x2 | ?x4)]]]
+
+[*g0023] (Integer ?g0023)
+[/* This is true */]
+~[/* This is false */]
+
+[/* comment */ If: [/* comment */ Then: ;end_comm];end_comm]
+[Equiv:
+	[Iff: /* true */]
+	[Iff: /* true */]
+]
+[Either: /* this denotes false */]
+[Either:
+	[Or: /* true */]
+	[Or: /* true */]
+]
+
+/* A pet cat Yojo is on a mat */
+(On [@*x (Pet ?x) (Cat ?x): Yojo] [Mat])
+/* the above in core CGIF */
+[:Yojo] (Pet Yojo) (Cat Yojo)
+[*g00238] (Mat ?g00238) (On Yojo ?g00238)
+/* A cat Yojo is on a mat */
+(On [Cat: Yojo] [Mat])
+/* core CGIF */
+[:Yojo] (Cat Yojo) [*g00719] (Mat ?g00719) (On Yojo ?g00719)
+
+[Proposition: ]
+[Proposition: []]
+[Proposition: [Person: John]]
+[Proposition: dummy [Person: John]]
+
+/* interspersing propositions with random CGs */
+[Random: 123]
+[Another: Random]
+[Proposition: crap []]
+
+[Test: /**/ ;;;;;;;]
+
